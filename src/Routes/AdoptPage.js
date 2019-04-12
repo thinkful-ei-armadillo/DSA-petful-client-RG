@@ -6,8 +6,11 @@ import PetfulServices from '../Services/PetfulServices';
 export class AdoptPage extends Component {
   static contextType = PetfulContext;
   componentDidMount(){
-  PetfulServices.getDogs().then(res => console.log('dogs', res));
+  PetfulServices.getDogs().then(res => {
+    this.context.setDogList(res.display);
+    this.context.setDogfirst(res.first);})
   PetfulServices.getCats().then(res => console.log('cats', res));
+  console.log('dogcontext', this.context.dog)
   }
   render() {
     const {Dogs, Cats} = this.context;

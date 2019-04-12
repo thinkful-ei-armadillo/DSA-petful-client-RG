@@ -20,7 +20,7 @@ export class PetfulProvider extends Component {
                 breed: 'Bengal',
                 story: 'Thrown on the street'
                 }],
-            list: [{
+            display: [{
                 id:1,
                 imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
                 imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
@@ -69,12 +69,24 @@ export class PetfulProvider extends Component {
                     }]
                 }
     }
-    
+    setDogfirst = (data) =>{
+       const firstDog = [data]
+       this.setState({Dogs: 
+                        { first: firstDog}});
+    }
+    setDogList = (data) =>{
+        this.setState({dogs: {
+            list: data
+        }});
+    }
     render(){
         const value = {
             Dogs: this.state.Dogs,
             Cats: this.state.Cats,
+            setDogList: this.setDogList,
+            setDogfirst: this.setDogfirst
         }
+        
         return(
             <PetfulContext.Provider value={value}>
                 {this.props.children}
