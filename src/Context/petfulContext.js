@@ -2,7 +2,9 @@ import React, { Component} from 'react';
 
 const PetfulContext = React.createContext({
   DogQueueList: [],
-  CatQueueList: []
+  CatQueueList: [],
+  setDogs: () => {},
+  setCats: () => {},
 })
 
 export default PetfulContext;
@@ -11,31 +13,32 @@ export class PetfulProvider extends Component {
     state={
         Dogs: {
             first: [],
-            display: []
+            list: []
         },
         Cats: {
             first: [],
             list: []
         }
     }
-    setDogfirst = (data) =>{
-       const firstDog = [data]
+    setCats= (first, list) => {
+        this.setState({Cats: 
+                         { first: [first],
+                           list: list}});
+    }
+    setDogs = (first, list) =>{
        this.setState({Dogs: 
-                        { first: firstDog}});
+                        { first: [first],
+                          list: list}});
     }
-    setDogList = (data) =>{
-        this.setState({dogs: {
-            list: data
-        }});
-    }
+
     render(){
         const value = {
             Dogs: this.state.Dogs,
             Cats: this.state.Cats,
-            setDogList: this.setDogList,
-            setDogfirst: this.setDogfirst
+            setCats: this.setCats,
+            setDogs: this.setDogs
         }
-        
+     
         return(
             <PetfulContext.Provider value={value}>
                 {this.props.children}

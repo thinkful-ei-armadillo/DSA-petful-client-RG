@@ -5,12 +5,21 @@ import PetfulServices from '../Services/PetfulServices';
 
 export class AdoptPage extends Component {
   static contextType = PetfulContext;
+  state= {
+    isFetched: false
+  }
+
   componentDidMount(){
   PetfulServices.getDogs().then(res => {
-    this.context.setDogList(res.display);
-    this.context.setDogfirst(res.first);})
-  PetfulServices.getCats().then(res => console.log('cats', res));
-  console.log('dogcontext', this.context.dog)
+    const list = res.display;
+    const first = res.first;
+
+    this.context.setDogs(first, list);});
+  PetfulServices.getCats().then(res => {
+    const list = res.display;
+    const first = res.first;
+    this.context.setCats(first, list);});
+  this.setState({isFetched: true})
   }
   render() {
     const {Dogs, Cats} = this.context;

@@ -20,7 +20,7 @@ export class PetQueueDisplay extends Component {
   renderCurrentPetDisplay = (currentPet) => {
     return (
       <div className="pet-info">
-        <img src={currentPet[0].imageURL} width='50' height='50' alt={currentPet[0].imageDescription}></img>
+        <img src={currentPet[0].imageurl} width='50' height='50' alt={currentPet[0].imagedescription}></img>
         <p>Age: {currentPet[0].age}</p>
         <p>Breed:{currentPet[0].breed} </p>
         <p>Name:{currentPet[0].name}  </p>
@@ -42,6 +42,7 @@ export class PetQueueDisplay extends Component {
     return item;
   }
   render() {
+    console.log(this.state.currentPet)
     const pets = this.state.pets;
     const currentPet = this.state.currentPet;
     const type = this.props.type;
@@ -56,7 +57,7 @@ export class PetQueueDisplay extends Component {
         <AdoptButton isInQueue={this.state.nextInLine[0].id !== this.state.currentPet[0].id ? false : true}/> : "" }
         <div className='pet-img-container'>
           {pets.map((pet, i) => 
-            <input type='image' onClick={() => this.handlePetClick(i)} alt={pet.imageDescription} key={i} src={pet.imageURL} width='40' height='50'/>
+            <input type='image' onClick={() => this.handlePetClick(i)} alt={pet.imagedescription} key={i} src={pet.imageurl} width='40' height='50'/>
             )}
         
         </div>
