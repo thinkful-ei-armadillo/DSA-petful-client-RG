@@ -14,8 +14,8 @@ class App extends Component {
      </header>
      <main role='main'>
        <Switch>
-         <Route exact path='/' Component={LandingPage}/>
-         <Route path='/adopt' Component={AdoptPage}/>
+         <Route exact path={'/'} component={LandingPage}/>
+         <Route path={'/adopt'} component={AdoptPage}/>
        </Switch>
      </main>
     </PetfulProvider>
