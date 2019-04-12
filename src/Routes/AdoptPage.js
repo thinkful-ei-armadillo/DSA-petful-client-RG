@@ -8,14 +8,14 @@ export class AdoptPage extends Component {
     
   }
   render() {
-    const {DogQueueList, CatQueueList} = this.context;
+    const {Dogs, Cats} = this.context;
     return (
-      <section>
-        <div className='cat-container'>
-            <PetQueueDisplay petList={CatQueueList} type={'Cat'}/>
+      <section className='row'>
+        <div className='cat-container col-6'>
+            <PetQueueDisplay pets={Cats} type={'Cat'}/>
         </div>
-        <div className='dog-container'>
-            <PetQueueDisplay petList={DogQueueList} type={'Dog'}/>
+        <div className='dog-container col-6'>
+            <PetQueueDisplay pets={Dogs} type={'Dog'}/>
         </div>
       </section>
     )
