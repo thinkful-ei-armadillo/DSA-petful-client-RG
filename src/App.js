@@ -9,9 +9,6 @@ class App extends Component {
   render() {
     return (
     <PetfulProvider>
-     <header>
-      
-     </header>
      <main role='main'>
        <Switch>
          <Route exact path={'/'} component={LandingPage}/>

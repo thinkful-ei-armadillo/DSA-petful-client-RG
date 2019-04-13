@@ -16,6 +16,12 @@ const PetfulServices = {
             ? res.json().then(e => Promise.reject(e))
             : res.json()
         )
-    }
+    },
+    adoptPet(id, typeOfPet ){
+      const type = typeOfPet.toLowerCase();
+      return fetch(`${config.API_ENDPOINT}/${type}/${id}`, {
+        method: 'DELETE',
+      })
+    },
 }
 export default PetfulServices;
