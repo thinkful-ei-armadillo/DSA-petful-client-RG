@@ -37,12 +37,10 @@ export class PetQueueDisplay extends Component {
     const { type} = this.props;
     return (
       <div className='pet-container col-12'>
-        <div className='next-prev-container'>
-        </div>
-        <h3>{type}s</h3>
+        <h3>{type}</h3>
           {this.state.currentPet.length !== 0 ? this.renderCurrentPetDisplay(this.state.currentPet) : '' }
-          {this.state.currentPet.length > 0   ?
-        <AdoptButton isInQueue={first[0].id !== this.state.currentPet[0].id ? false : true} id={first[0].id} type={type}/> : "" }
+          {this.state.currentPet.length !== 0   ?
+        <AdoptButton isInQueue={first[0].id !== this.state.currentPet[0].id ? false : true} id={!first[0].id ? "": first[0].id} type={type}/> : "" }
         <div className='pet-img-container'>
           {list.map((pet, i) => 
             <input type='image' onClick={() => this.handlePetClick(i, list)} 

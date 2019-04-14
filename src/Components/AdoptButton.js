@@ -16,7 +16,7 @@ export class AdoptButton extends Component {
     return (
       <React.Fragment>
         {this.props.isInQueue ? 
-        <input type='button' name='adopt-btn' value='would you like to adopt' onClick={() => this.handleAdoptClick(id, type)}/> : ""}
+        <input type='button' name='adopt-btn' value='Adopt' onClick={() => this.handleAdoptClick(id, type)}/> : ""}
       </React.Fragment>
     )
   }
