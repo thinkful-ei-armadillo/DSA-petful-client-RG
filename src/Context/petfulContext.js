@@ -27,14 +27,14 @@ export class PetfulProvider extends Component {
     setCats= (first, list) => {
         this.setState({
             Cats: { 
-              first: [first],
+              first: first,
               list: list}
         });
     }
     setDogs = (first, list) =>{
        this.setState({
            Dogs: { 
-            first: [first],
+            first: first,
             list: list}
         });
     }
@@ -43,7 +43,7 @@ export class PetfulProvider extends Component {
       const first = list[0];
       this.setState({
         Cats: {
-            first: [first],
+            first: first,
             list: list
         }
       });
@@ -53,7 +53,7 @@ export class PetfulProvider extends Component {
         const first = list[0];
         this.setState({
           Dogs: {
-              first: [first],
+              first: first,
               list: list
           }
         });
