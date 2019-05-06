@@ -8,13 +8,6 @@ export class PetQueueDisplay extends Component {
         currentPet: {}
       }
     }
-  
-  componentDidMount(){
-    const currentPet = this.props.pets.first;
-    this.setState({
-       currentPet,
-    })
-  }
 
   renderCurrentPetDisplay = (currentPet) => {
     return (
@@ -37,16 +30,30 @@ export class PetQueueDisplay extends Component {
   render() {
     const {first , list} = this.props.pets;
     const { type} = this.props;
+    const currentPet = this.state.currentPet;
     return (
       <div className='pet-container col-12'>
         <h3>{type}</h3>
-          {this.state.currentPet ? this.renderCurrentPetDisplay(this.state.currentPet) : '' }
-          {this.state.currentPet  ?
-        <AdoptButton isInQueue={first.id !== this.state.currentPet.id ? false : true} id={!first.id ? "": first.id} type={type}/> : "" }
+          {Object.entries(currentPet).length !== 0 
+            ? this.renderCurrentPetDisplay(currentPet) 
+            : <p>Please Select a pet</p> }
+          {this.state.currentPet  
+            ? <AdoptButton 
+              isInQueue={first.id !== this.state.currentPet.id ? false : true} 
+              id={!first.id ? "": first.id} 
+              type={type}
+            /> 
+            : "" }
         <div className='pet-img-container'>
           {list.map((pet, i) => 
-            <input type='image' onClick={() => this.handlePetClick(pet.id, list)} 
-            alt={pet.imagedescription} key={i} src={pet.imageurl} width='40' height='50'/>
+            <input type='image' 
+              onClick={() => this.handlePetClick(pet.id, list)} 
+              alt={pet.imagedescription}
+              key={i} 
+              src={pet.imageurl} 
+              width='40' 
+              height='50'
+            />
           )}
         </div>
       </div>
