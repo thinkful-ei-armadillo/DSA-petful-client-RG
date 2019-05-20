@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "alias": "petful-app",
+    "name": "petful-app",
+    "routes": [
+      {
+        "src": "^/static/(.*)",
+        "dest": "/static/$1"
+      },
+       {
+        "src": "^/manifest.json$",
+        "dest": "/manifest.json"
+       },
+       {
+        "src": "^/site.webmanifest.json$",
+        "dest": "/site.webmanifest.json"
+       }
+       ,
+      {
+        "src": ".*",
+        "dest": "/index.html"
+      }
+    ]
+  }
+  
