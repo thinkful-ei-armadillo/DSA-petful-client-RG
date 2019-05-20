@@ -8,7 +8,7 @@ Start by clicking on 'lets adopt' to get redirected to the adoption page. From t
 
 ## Demo
 
-https://petful.geordieconnell.now.sh
+https://petful-app.robinkhiv.now.sh/
 
 ## Tech Summary
 
