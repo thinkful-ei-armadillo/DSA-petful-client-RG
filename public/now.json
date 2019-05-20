@@ -1,33 +1,7 @@
 {
-<<<<<<< HEAD
-    "version": 2,
-    "alias": "petful-app",
-    "name": "petful-app",
-    "routes": [
-      {
-        "src": "^/static/(.*)",
-        "dest": "/static/$1"
-      },
-       {
-        "src": "^/manifest.json$",
-        "dest": "/manifest.json"
-       },
-       {
-        "src": "^/site.webmanifest.json$",
-        "dest": "/site.webmanifest.json"
-       }
-       ,
-      {
-        "src": ".*",
-        "dest": "/index.html"
-      }
-    ]
-  }
-  
-=======
  "version": 2,
- "name": "petful",
- "alias": "petful",
+ "name": "petful-app",
+ "alias": "petful-app",
  "routes": [
    {
      "src": "^/static/(.*)",
@@ -51,4 +25,3 @@
    }
  ]
 }
->>>>>>> 36e4aee492a8a0417381baf0fb77eff85edf07ec
